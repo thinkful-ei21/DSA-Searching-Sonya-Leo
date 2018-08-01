@@ -169,3 +169,41 @@ function main(){
 }
 
 main();
+
+function main2(){
+
+  let arr2 = [128, 97, 121, 123, 98, 97, 105];
+
+  function maxProfit(arr){
+    let total=0;
+    let buyday;
+    let sellday;
+    for(let i=0; i<arr.length; i++){
+      for(let j=i; j<arr.length; j++){
+        if(arr[j]-arr[i]>total){
+          total=arr[j]-arr[i];
+          buyday=arr[i];
+          sellday=arr[j];
+        }
+      }
+    }
+    return `buy at ${buyday}, sell at ${sellday}`;
+  }
+  console.log(maxProfit(arr2));
+}
+
+main2();
+
+// function eggDrop(floors){
+//   let floorNumber=1;
+//   let attempt=0;
+//   while(floorNumber<floors){
+//     attempt++;
+//     floorNumber=(floorNumber*(floorNumber+1))/2;
+//     console.log(floorNumber+ ' '+attempt);
+//   }
+// }
+// eggDrop(100);
+
+
+
