@@ -102,3 +102,11 @@ else print counter.
   // if it's larger than midpoint, recursively reset search to larger values
 //return the found item or a 'not found' message
 
+/* 
+
+Dewey Decimal
+
+Based on my limited Dewey Decimal knowledge I would assume the decimal system can be presented
+as a sorted array. 
+
+*/
