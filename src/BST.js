@@ -45,7 +45,7 @@ class BinarySearchTree {
     } else if (key > this.key && this.right) {  
       return this.right.find(key);
     } else {
-      return new Error('key error')
+      return new Error('key error');
     }
   }
 
@@ -124,10 +124,48 @@ class BinarySearchTree {
 
 }
 
-let tree = new BinarySearchTree();
-let arr = [3,1,4,6,9,2,5,7];
 
-for (let num in arr) {
-  
-  tree.insert(arr[num], num);
+function main(){
+  let tree = new BinarySearchTree();
+  let arr = [25, 15, 50, 10, 24, 35, 70, 4, 12, 18, 31, 44, 66, 90, 22];
+
+  for (let num in arr) {
+    tree.insert(arr[num], num);
+  }
+
+  function dsfPreOrder(key){
+    console.log(key.key);
+    if (key.left) {
+      dsfPreOrder(key.left);
+    }
+    if (key.right) {
+      dsfPreOrder(key.right);
+    }
+  }
+
+  function dsfInOrder(key){
+    if (key.left) {
+      dsfInOrder(key.left);
+    }
+    console.log(key.key);
+    if (key.right) {
+      dsfInOrder(key.right);
+    }
+  }
+
+  function dsfPostOrder(key) {
+    if (key.left) {
+      dsfPostOrder(key.left);
+    }
+    if (key.right) {
+      dsfPostOrder(key.right);
+    }
+    console.log(key.key);
+  }
+  // dsfInOrder(tree);
+  // dsfPreOrder(tree);
+  // dsfPostOrder(tree);
+  // console.log(tree);
 }
+
+main();
